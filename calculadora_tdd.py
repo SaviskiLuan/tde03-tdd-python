@@ -1,5 +1,7 @@
 class CalculadoraDescontoTDD:
     def calcular(self, valor, vip=False):
+        if valor <= 0:
+            raise ValueError("Valor do pedido deve ser maior que zero")
         valor = self._desconto_por_faixa(valor)
         if vip:
             valor = valor * 0.95
