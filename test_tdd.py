@@ -14,3 +14,11 @@ def test_vip_ganha_5_a_mais():
 
 def test_frete_abaixo_de_100():
     assert calc.calcular(80) == 95
+
+def test_valor_zero_lanca_erro():
+    with pytest.raises(ValueError):
+        calc.calcular(0)
+
+def test_valor_negativo_lanca_erro():
+    with pytest.raises(ValueError):
+        calc.calcular(-10)
