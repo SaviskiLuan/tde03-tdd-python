@@ -3,6 +3,8 @@ class CalculadoraDescontoTDD:
         valor = self._desconto_por_faixa(valor)
         if vip:
             valor = valor * 0.95
+        if valor < 100:
+            valor = valor + 15
         return round(valor, 2)
 
     def _desconto_por_faixa(self, valor):
